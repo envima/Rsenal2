@@ -2,6 +2,8 @@
 
 export(boundingBox)
 export(cropSentinel)
+export(crownShape)
+export(readSentinel)
 export(sessionInit)
 import(raster)
 import(sf)
