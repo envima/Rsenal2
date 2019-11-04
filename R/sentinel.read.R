@@ -10,7 +10,7 @@
 #' @export
 #'
 
-readSentinel <- function(pathL2A){
+sentinel.read <- function(pathL2A){
 
 
 senFilename <- function(pathL2A){
