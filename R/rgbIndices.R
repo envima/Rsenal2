@@ -22,6 +22,7 @@
 #' VARI (green-red)/(green+red-blue). A Visible Atmospherically Resistant Index (VARI)\cr
 #' VVI  (1-(r-30)/(r+30))*(1-(g-50)/(g+50))*(1-(b-1)/(b+1))
 #'
+#' @import raster
 #' @author
 #' Chris Reudenbach
 #'
@@ -49,17 +50,6 @@
 #' Wavelength ranges for overlapping digital camera bands are: red 580-670 nm, green 480-610 nm, and blue 400-520 nm (Hunt et al., 2005)
 #' http://digitalcommons.unl.edu/cgi/viewcontent.cgi?article=2161&context=usdaarsfacpub
 #'
-#' @examples
-#' \notrun{
-#' library(raster)
-#' url <- "https://upload.wikimedia.org/wikipedia/commons/2/28/RGB_illumination.jpg"
-#' dFile <- download.file(url, "Image.jpg")
-#' img <- stack("Image.jpg")
-#' plotRGB(img)
-#' rgbi <- rgbI(img)
-#' plot(rgbI, col = gray(255:0/255))
-#' }
-NULL
 
 rgbIndices<- function(rgb,
                       rgbi=c("VVI","VARI","NDTI","RI","CI","BI","SI","HI","TGI","GLI","NGRDI")) {

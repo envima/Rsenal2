@@ -12,10 +12,10 @@
 
 sessionInit <- function(){
   lapply(c(
-    "sf", "raster", "plyr", "RStoolbox",
-    "glcm", "stringr", "mapview", "rlist",
-    "caret", "ranger", "plyr", "reshape2",
-    "lidR", "spatialEco"
+    "sf", "raster", "RStoolbox",
+    "stringr", "mapview", "rlist",
+    "plyr", "reshape2",
+    "lidR", "ggplot2", "viridis"
   ), library, character.only = TRUE)
 
 

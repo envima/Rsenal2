@@ -3,6 +3,12 @@
 \name{rgbIndices}
 \alias{rgbIndices}
 \title{RGB indices}
+\usage{
+rgbIndices(
+  rgb,
+  rgbi = c("VVI", "VARI", "NDTI", "RI", "CI", "BI", "SI", "HI", "TGI", "GLI", "NGRDI")
+)
+}
 \arguments{
 \item{rgb}{a \code{RasterStack} or \code{RasterBrick} object. 3
 bands are mandatory (for RGB indices they should be: "red", "green" and "blue").}
@@ -15,17 +21,6 @@ A \code{RasterStack} object.
 \description{
 This function calculates various spectral indices from a RGB. It returns at least red green and blue as splitted channels in a stack. Additionally you can choose RGB indices.
 \code{Raster*} object.
-}
-\examples{
-\\notrun{
-library(raster)
-url <- "https://upload.wikimedia.org/wikipedia/commons/2/28/RGB_illumination.jpg"
-dFile <- download.file(url, "Image.jpg")
-img <- stack("Image.jpg")
-plotRGB(img)
-rgbi <- rgbI(img)
-plot(rgbI, col = gray(255:0/255))
-}
 }
 \references{
 Planetary Habitability Laboratory (2015): Visible Vegetation Index (VVI). Available online via \url{http://phl.upr.edu/projects/visible-vegetation-index-vvi}.
