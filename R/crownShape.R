@@ -8,9 +8,24 @@
 #'
 #' @return tree with crown shape poylgon
 #'
+#' @import sf
+#'
 #' @author Marvin Ludwig
 #'
 #' @export
+#'
+#' @examples
+#' # create example tree
+#' t = data.frame(id = "tree1", x = 5, y = 5)
+#' t = sf::st_as_sf(t, coords = c(2,3))
+#'
+#' # measurements with angle and distance
+#' m = data.frame(a = c(0,90,160,200,270),
+#'                d = c(1,2,1,3,2))
+#'
+#' tc = crownShape(t = t, angle = m$a, distance = m$d)
+#' plot(tc)
+#'
 
 #
 
@@ -19,7 +34,7 @@ crownShape <- function(tree, distance, angle, crs = 25832){
 
 
   # tree coordinates
-  tree_coords <- st_coordinates(tree)
+  tree_coords <- sf::st_coordinates(tree)
 
 
   # corner formating
@@ -34,8 +49,8 @@ crownShape <- function(tree, distance, angle, crs = 25832){
   p <- rbind(p, p[1,])
 
 
-  p <- st_sfc(st_polygon(list(p)), crs = crs)
-  st_geometry(tree) <- p
+  p <- sf::st_sfc(sf::st_polygon(list(p)), crs = crs)
+  sf::st_geometry(tree) <- p
   return(tree)
 
 }

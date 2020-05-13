@@ -21,6 +21,19 @@ tree with crown shape poylgon
 \description{
 Adds crown geometry to tree
 }
+\examples{
+# create example tree
+t = data.frame(id = "tree1", x = 5, y = 5)
+t = sf::st_as_sf(t, coords = c(2,3))
+
+# measurements with angle and distance
+m = data.frame(a = c(0,90,160,200,270),
+               d = c(1,2,1,3,2))
+
+tc = crownShape(t = t, angle = m$a, distance = m$d)
+plot(tc)
+
+}
 \author{
 Marvin Ludwig
 }
