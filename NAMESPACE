@@ -3,6 +3,8 @@
 export(boundingBox)
 export(crown.radius)
 export(crownShape)
+export(gps2gcp)
+export(gpsPretty)
 export(raster.split)
 export(rgbIndices)
 export(sentinel.crop)
